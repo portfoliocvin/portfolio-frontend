@@ -1,0 +1,197 @@
+.rb-page{min-height:100vh;background:#f4f6fb;padding:38px clamp(16px,4vw,56px);color:#17213b;font-family:'DM Sans',Arial,sans-serif}.rb-header{display:flex;justify-content:space-between;align-items:center;gap:20px;max-width:1500px;margin:0 auto 25px}.rb-header h1{font-size:32px;margin:4px 0}.rb-header p{color:#748096;margin:5px 0}.rb-kicker{font-size:10px!important;letter-spacing:2px;font-weight:800;color:#5b55d9!important}.rb-back,.rb-panel-title button{border:1px solid #dfe4ef;background:#fff;border-radius:10px;padding:11px 15px;color:#343c55;font-weight:700;cursor:pointer}.rb-layout{max-width:1500px;margin:auto;display:grid;grid-template-columns:minmax(360px, .95fr) minmax(420px,1.05fr);gap:24px;align-items:start}.rb-editor{display:grid;gap:16px}.rb-panel{background:#fff;border:1px solid #e6eaf2;border-radius:16px;padding:21px;box-shadow:0 6px 24px #26385b08}.rb-panel h2{font-size:17px;margin:0 0 16px}.rb-hint{font-size:12px;color:#7c879b;margin:-8px 0 15px}.rb-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.rb-fields label,.rb-panel>label,.rb-repeat label{display:grid;gap:6px;font-size:11px;font-weight:700;color:#59647a}.rb-fields input,.rb-fields textarea,.rb-panel input,.rb-panel textarea,.rb-repeat input{width:100%;box-sizing:border-box;border:1px solid #e1e6ef;border-radius:8px;padding:10px 11px;font:13px Arial;color:#27334a;background:#fff}.rb-fields .wide{grid-column:1/-1}.rb-education{border-top:1px solid #edf0f5;padding-top:14px;margin-top:14px}.rb-education h3{font-size:13px;margin:0 0 12px}.rb-templates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.rb-template{border:1px solid #e3e7f0;background:#fff;border-radius:11px;padding:12px;text-align:left;display:grid;gap:5px;cursor:pointer;color:#344056}.rb-template.selected{border:2px solid #6258dc;background:#f8f7ff}.rb-template strong{font-size:12px}.rb-template small{font-size:10px;color:#7b8598}.rb-mini{height:54px;background:#f2f4f8;border-radius:6px;padding:8px;display:grid;gap:4px;align-content:start}.rb-mini i{display:block;height:4px;width:70%;background:#9ba6ba;border-radius:4px}.rb-mini i:nth-child(2){width:45%}.rb-mini.modern,.rb-mini.creative{background:#e9eaff}.rb-mini.executive{background:#e8edf1}.rb-panel-title{display:flex;justify-content:space-between;align-items:center}.rb-panel-title h2{margin:0}.rb-repeat{border-top:1px solid #edf0f5;padding-top:13px;margin-top:13px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.rb-remove{grid-column:1/-1;justify-self:start;border:0;background:#fff0f0;color:#b42318;padding:7px 10px;border-radius:7px;cursor:pointer}.rb-actions{display:flex;gap:10px}.rb-actions button{flex:1;border:0;border-radius:10px;padding:14px;font-weight:800;cursor:pointer}.rb-save{background:#e8eaff;color:#4338ca}.rb-download{background:#4338ca;color:#fff}.rb-preview{position:sticky;top:18px}.rb-preview-label{font-size:10px;letter-spacing:1.6px;font-weight:800;color:#7d879a;margin:0 0 10px}.rb-paper{background:white;min-height:900px;padding:48px 46px;box-shadow:0 12px 40px #26385b16;color:#263247;font-family:Arial,sans-serif}.rb-resume-head{border-bottom:2px solid #34435b;padding-bottom:17px;margin-bottom:20px}.rb-resume-head h1{font-size:27px;margin:0 0 6px}.rb-resume-head h2{font-size:14px;color:#53627a;margin:0 0 10px;font-weight:500}.rb-resume-head p{font-size:10px;color:#667085;line-height:1.7;margin:0;overflow-wrap:anywhere}.rb-paper section{margin:19px 0}.rb-paper section h3{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;border-bottom:1px solid #dce1e9;padding-bottom:7px;margin:0 0 10px;color:#34435b}.rb-paper section p{font-size:11px;line-height:1.65;margin:5px 0;color:#4c586b}.rb-preview-item{margin:9px 0}.rb-preview-item strong{font-size:11px}.rb-placeholder{color:#9aa3b2!important;font-style:italic}.rb-paper.modern{display:grid;grid-template-columns:1fr 2fr;column-gap:25px;align-content:start}.rb-paper.modern .rb-resume-head{grid-column:1/-1;background:#eef0ff;margin:-48px -46px 22px;padding:42px 46px 22px;border:0}.rb-paper.executive .rb-resume-head{text-align:center;border-bottom:4px double #34435b}.rb-paper.executive section h3{border-bottom:2px solid #34435b}.rb-paper.creative .rb-resume-head{border-left:7px solid #6258dc;padding-left:17px}.rb-paper.creative section h3{color:#6258dc;border-color:#c8c5ff}.rb-alert{max-width:1500px;margin:0 auto 14px;padding:11px 14px;border-radius:9px;font-size:13px}.rb-alert.error{background:#fff0ef;color:#a3261d}.rb-alert.success{background:#eaf8ef;color:#187344}.rb-loading{min-height:70vh;display:grid;place-items:center;color:#56627a}@media(max-width:900px){.rb-layout{grid-template-columns:1fr}.rb-preview{position:static}.rb-paper{min-height:700px}}@media(max-width:560px){.rb-header{align-items:flex-start;flex-direction:column}.rb-fields,.rb-repeat{grid-template-columns:1fr}.rb-fields .wide{grid-column:auto}.rb-paper{padding:28px 23px}.rb-paper.modern .rb-resume-head{margin:-28px -23px 18px;padding:28px 23px}.rb-paper.modern{display:block}.rb-actions{flex-direction:column}}
+@media print{@page{size:A4;margin:0}html,body{background:#fff!important;margin:0!important}.rb-page{padding:14mm!important;background:#fff!important}.no-print,.rb-editor,.rb-header,.rb-alert{display:none!important}.rb-layout{display:block!important;max-width:none!important}.rb-preview{position:static!important}.rb-preview-label{display:none!important}.rb-paper{box-shadow:none!important;min-height:0!important;padding:0!important;width:auto!important}.rb-paper.modern .rb-resume-head{margin:0 0 18px!important;padding:0 0 18px!important;background:#fff!important}.rb-paper section{break-inside:avoid}.rb-paper.modern{display:grid!important;grid-template-columns:1fr 2fr!important}}
+
+/* Additional resume template styles */
+.rb-mini.ats{background:#f0f4f8}.rb-mini.compact{background:#e8f1f5}.rb-mini.academic{background:#f4eee4}.rb-mini.technical{background:#e7f3f2}.rb-mini.elegant{background:#f4f0f5}.rb-mini.bold{background:#e9e9ff}
+.rb-paper.ats{font-family:Arial,sans-serif}.rb-paper.ats .rb-resume-head{border-bottom:1px solid #222}.rb-paper.ats section h3{color:#222;letter-spacing:.7px;border-bottom:1px solid #777}
+.rb-paper.compact{padding:36px 38px;font-size:10px}.rb-paper.compact .rb-resume-head{margin-bottom:12px;padding-bottom:10px}.rb-paper.compact .rb-paper section{margin:12px 0}.rb-paper.compact section h3{margin-bottom:6px}.rb-paper.compact .rb-preview-item{margin:5px 0}
+.rb-paper.academic .rb-resume-head{text-align:left;border-bottom:1px solid #9a7954}.rb-paper.academic .rb-resume-head h1{font-family:Georgia,serif}.rb-paper.academic section h3{font-family:Georgia,serif;color:#765b3e;border-bottom:1px solid #cbb99f;letter-spacing:.6px}.rb-paper.academic section{margin:22px 0}
+.rb-paper.technical .rb-resume-head{background:#eaf4f3;margin:-48px -46px 22px;padding:38px 46px 22px;border-bottom:4px solid #287b75}.rb-paper.technical section h3{color:#287b75;border-color:#a8d2ce}.rb-paper.technical section:nth-of-type(2){border-left:3px solid #287b75;padding-left:12px}
+.rb-paper.elegant{font-family:Georgia,serif;color:#34313b}.rb-paper.elegant .rb-resume-head{text-align:center;border-bottom:1px solid #b9a7ba;padding-bottom:24px}.rb-paper.elegant .rb-resume-head h1{font-weight:500;letter-spacing:1px}.rb-paper.elegant .rb-resume-head h2{font-family:Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase;font-size:10px}.rb-paper.elegant section h3{font-family:Arial,sans-serif;color:#806580;letter-spacing:2px;border-color:#ded3df}
+.rb-paper.bold .rb-resume-head{background:#252d4b;color:#fff;margin:-48px -46px 22px;padding:42px 46px 24px;border:0}.rb-paper.bold .rb-resume-head h2,.rb-paper.bold .rb-resume-head p{color:#e0e5f7}.rb-paper.bold section h3{color:#4d55a8;border-bottom:2px solid #aeb3e6}
+@media(max-width:560px){.rb-paper.technical .rb-resume-head,.rb-paper.bold .rb-resume-head{margin:-28px -23px 18px;padding:28px 23px}.rb-paper.compact{padding:28px 23px}}
+@media print{.rb-paper.technical .rb-resume-head,.rb-paper.bold .rb-resume-head{print-color-adjust:exact;-webkit-print-color-adjust:exact}.rb-paper.bold .rb-resume-head{margin:0 0 18px!important;padding:20px!important}.rb-paper.technical .rb-resume-head{margin:0 0 18px!important;padding:20px!important}}
+/* =========================================
+   RESUME TEMPLATE HORIZONTAL CAROUSEL
+========================================= */
+
+.rb-template-panel {
+  min-width: 0;
+}
+
+.rb-template-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rb-template-heading h2 {
+  margin: 0;
+}
+
+.rb-carousel-controls {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.rb-carousel-controls button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #dfe4ef;
+  border-radius: 9px;
+  background: #fff;
+  color: #343c55;
+  font-size: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rb-carousel-controls button:hover {
+  background: #6258dc;
+  color: #fff;
+  border-color: #6258dc;
+}
+
+.rb-template-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 3px 2px 13px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #b9b6f2 #f0f1f7;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rb-template-carousel::-webkit-scrollbar {
+  height: 7px;
+}
+
+.rb-template-carousel::-webkit-scrollbar-track {
+  background: #f0f1f7;
+  border-radius: 10px;
+}
+
+.rb-template-carousel::-webkit-scrollbar-thumb {
+  background: #b9b6f2;
+  border-radius: 10px;
+}
+
+.rb-template-carousel .rb-template {
+  flex: 0 0 230px;
+  width: 230px;
+  min-width: 230px;
+  scroll-snap-align: start;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.rb-template-carousel .rb-template:hover {
+  border-color: #8d85ed;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px #26385b12;
+}
+
+.rb-template-carousel .rb-template.selected {
+  border: 2px solid #6258dc;
+  background: #f8f7ff;
+  box-shadow: 0 4px 15px #6258dc18;
+}
+
+.rb-template-carousel .rb-mini {
+  height: 62px;
+}
+
+/* Mobile responsive carousel */
+
+@media (max-width: 560px) {
+  .rb-template-heading {
+    align-items: center;
+  }
+
+  .rb-template-carousel {
+    gap: 10px;
+  }
+
+  .rb-template-carousel .rb-template {
+    flex: 0 0 205px;
+    width: 205px;
+    min-width: 205px;
+  }
+
+  .rb-carousel-controls button {
+    width: 33px;
+    height: 33px;
+  }
+}
+/* Saved resume library and header actions */
+.rb-header-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.rb-view-saved{border:1px solid #d8dcff;background:#f5f5ff;color:#4338ca;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}.rb-modal-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(20,28,48,.52);display:grid;place-items:center;padding:20px}.rb-saved-modal{width:min(620px,100%);background:#fff;border-radius:20px;padding:25px;box-shadow:0 24px 80px rgba(10,20,50,.25);color:#17213b}.rb-saved-modal-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.rb-saved-modal-head h2{font-size:24px;margin:4px 0}.rb-saved-subtitle{margin:6px 0 0;color:#718096;font-size:13px}.rb-modal-close{border:0;background:#f1f3f8;border-radius:9px;width:36px;height:36px;font-size:24px;line-height:1;cursor:pointer;color:#536078}.rb-saved-card{display:flex;align-items:center;gap:14px;border:1px solid #e5e9f2;border-radius:14px;padding:16px;margin:24px 0}.rb-saved-card-icon{width:48px;height:54px;display:grid;place-items:center;border-radius:9px;background:#fff0f0;color:#c33;font-size:12px;font-weight:900}.rb-saved-card-info{display:grid;gap:4px;flex:1;min-width:0}.rb-saved-card-info strong{font-size:15px}.rb-saved-card-info span,.rb-saved-card-info small{font-size:12px;color:#778198}.rb-saved-open{border:0;background:#4b46df;color:#fff;border-radius:9px;padding:10px 13px;font-weight:800;cursor:pointer}.rb-saved-empty,.rb-saved-state,.rb-saved-error{margin:24px 0;padding:22px;border-radius:12px;background:#f7f8fc;text-align:center;color:#65718a}.rb-saved-empty strong{color:#263247}.rb-saved-empty p{font-size:13px;margin:7px 0 0}.rb-saved-error{background:#fff1f0;color:#b42318}.rb-saved-modal-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #edf0f5;padding-top:16px;color:#8a93a5;font-size:11px}.rb-saved-modal-foot .rb-back{padding:8px 13px}
+@media(max-width:560px){.rb-header-actions{width:100%}.rb-header-actions button{flex:1}.rb-saved-card{align-items:flex-start;flex-wrap:wrap}.rb-saved-open{width:100%}.rb-saved-modal{padding:18px}}
+
+
+/* Restored Professional Timeline Sidebar resume template */
+.rb-timeline-header{min-height:145px;background:#171717;color:#fff;display:flex;align-items:center;gap:28px;padding:28px 38px}
+.rb-timeline-header h1{font-family:Georgia,"Times New Roman",serif;font-size:27px;letter-spacing:.5px;margin:0 0 7px;color:#fff}
+.rb-timeline-header h2{font-family:Georgia,"Times New Roman",serif;font-size:12px;font-weight:400;letter-spacing:.7px;text-transform:uppercase;color:#e4e4e4;margin:0}
+.rb-avatar{width:94px;height:94px;flex:0 0 94px;border:4px solid #fff;border-radius:50%;display:grid;place-items:center;background:#d9d9d9;color:#202020;font:bold 27px Arial,sans-serif;box-shadow:0 0 0 2px #999}
+.rb-timeline-body{display:grid;grid-template-columns:32% 68%;min-height:905px}
+.rb-timeline-sidebar{background:#dedede;padding:25px 19px;color:#191919}
+.rb-paper.timeline .rb-timeline-sidebar section{margin:0 0 30px}
+.rb-paper.timeline .rb-timeline-sidebar h3{font-family:Georgia,"Times New Roman",serif;font-size:18px;letter-spacing:.5px;color:#111;border-bottom:2px solid #777;padding:0 0 7px;margin:0 0 12px}
+.rb-paper.timeline .rb-timeline-sidebar p,.rb-paper.timeline .rb-timeline-sidebar li{font-family:Georgia,"Times New Roman",serif;font-size:10px;line-height:1.55;color:#222;overflow-wrap:anywhere}
+.rb-paper.timeline .rb-timeline-sidebar p{margin:7px 0}
+.rb-paper.timeline .rb-timeline-sidebar ul{padding-left:17px;margin:0}
+.rb-timeline-main{padding:29px 28px 34px 30px;position:relative}
+.rb-paper.timeline .rb-timeline-main section{margin:0 0 27px;padding-left:20px;position:relative}
+.rb-paper.timeline .rb-timeline-main section:before{content:"";position:absolute;left:0;top:4px;bottom:-20px;width:1px;background:#777}
+.rb-paper.timeline .rb-timeline-main section:after{content:"";position:absolute;left:-5px;top:4px;width:9px;height:9px;border:1.5px solid #222;border-radius:50%;background:#fff}
+.rb-paper.timeline .rb-timeline-main h3{font-family:Georgia,"Times New Roman",serif;font-size:17px;letter-spacing:.3px;color:#111;border-bottom:1px solid #8ea6d3;padding:0 0 6px;margin:0 0 11px}
+.rb-paper.timeline .rb-timeline-main p,.rb-paper.timeline .rb-timeline-main li{font-family:Georgia,"Times New Roman",serif;font-size:10.5px;line-height:1.55;color:#242424}
+.rb-paper.timeline .rb-timeline-main p{margin:4px 0}
+.rb-paper.timeline .rb-timeline-main ul{padding-left:17px;margin:0}
+.rb-timeline-item{margin:0 0 12px;break-inside:avoid}
+.rb-timeline-item strong{font-size:11px;text-transform:uppercase}
+.rb-timeline-item em{color:#555}
+.rb-language-input{display:grid;gap:6px;margin-top:12px;font-size:11px;font-weight:700;color:#59647a}
+.rb-language-input input{width:100%;box-sizing:border-box;border:1px solid #e1e6ef;border-radius:8px;padding:10px 11px;font:13px Arial;color:#27334a;background:#fff}
+@media(max-width:560px){
+  .rb-paper.timeline{min-height:0}
+  .rb-timeline-header{padding:22px 17px;gap:14px;min-height:110px}
+  .rb-timeline-header h1{font-size:19px}
+  .rb-avatar{width:68px;height:68px;flex-basis:68px;font-size:21px}
+  .rb-timeline-body{grid-template-columns:35% 65%}
+  .rb-timeline-sidebar{padding:18px 10px}
+  .rb-timeline-main{padding:20px 12px 20px 18px}
+  .rb-paper.timeline .rb-timeline-sidebar h3{font-size:14px}
+  .rb-paper.timeline .rb-timeline-main h3{font-size:14px}
+  .rb-paper.timeline .rb-timeline-sidebar p,.rb-paper.timeline .rb-timeline-sidebar li,.rb-paper.timeline .rb-timeline-main p,.rb-paper.timeline .rb-timeline-main li{font-size:9px}
+}
+@media print{
+  .rb-paper.timeline{min-height:0;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .rb-timeline-header,.rb-timeline-sidebar{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .rb-timeline-header{min-height:120px;padding:22px 28px}
+  .rb-timeline-body{min-height:0}
+  .rb-timeline-sidebar{background:#dedede!important}
+  .rb-paper.timeline .rb-timeline-main section,.rb-timeline-item{break-inside:avoid}
+}
+
+
+/* Save confirmation animation (additive; existing resume styles are unchanged) */
+.rb-save{display:inline-flex;align-items:center;justify-content:center;gap:9px;transition:background .22s ease,color .22s ease,transform .22s ease,box-shadow .22s ease}
+.rb-save:disabled{opacity:.78;cursor:wait}
+.rb-save.is-saved{background:#16834a;color:#fff;box-shadow:0 7px 18px rgba(22,131,74,.2);animation:rb-save-pop .38s ease both}
+.rb-save-check{display:inline-grid;place-items:center;width:23px;height:23px;border-radius:50%;background:#fff;color:#16834a;font-size:16px;font-weight:900;animation:rb-check-in .35s cubic-bezier(.2,.8,.2,1) both}
+.rb-save-spinner{width:15px;height:15px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:rb-save-spin .7s linear infinite}
+@keyframes rb-save-spin{to{transform:rotate(360deg)}}
+@keyframes rb-save-pop{0%{transform:scale(.97)}65%{transform:scale(1.025)}100%{transform:scale(1)}}
+@keyframes rb-check-in{0%{opacity:0;transform:scale(.35) rotate(-35deg)}75%{opacity:1;transform:scale(1.15) rotate(5deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@media(prefers-reduced-motion:reduce){.rb-save,.rb-save-check,.rb-save-spinner{animation:none!important;transition:none!important}}

@@ -4,20 +4,17 @@ import "../css/Navbar.css";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-
-        {/* Logo */}
+        {/* Left: personal brand */}
         <a href="#home" className="logo" onClick={closeMenu}>
           VAJRABILASH DEGAPOGU<span>.</span>
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Center: page navigation */}
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
           <a href="#home" onClick={closeMenu}>Home</a>
           <a href="#about" onClick={closeMenu}>About</a>
@@ -30,18 +27,28 @@ function Navbar() {
           <a href="#contact" onClick={closeMenu}>Contact</a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Right: WebResume action */}
+        <a
+          href="/customer/register"
+          className="nav-build-cta"
+          onClick={closeMenu}
+        >
+          Build Your Portfolio
+        </a>
+
+        {/* Mobile menu toggle */}
         <button
           className={`menu-button ${menuOpen ? "active" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((open) => !open)}
           aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
+          aria-controls="main-navigation"
+          type="button"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
-
       </div>
     </nav>
   );

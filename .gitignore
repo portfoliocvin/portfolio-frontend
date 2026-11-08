@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Temporary preparation files and duplicate nested project files
+/PATCH_README.txt
+/src/PATCH_README.txt
+/src/README.md
+/src/package.json
+/src/package-lock.json
+/src/.gitignore
+
+# Old navigation backups
+/src/components/Navbarold*.jsx
+/src/css/Navbarold*.css

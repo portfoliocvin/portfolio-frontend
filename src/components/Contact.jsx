@@ -58,7 +58,7 @@ function Contact() {
               className="contact-icon-link"
               aria-label="Send email"
             >
-              <span className="contact-icon"><i class="bi bi-envelope-at"></i></span>
+              <span className="contact-icon"><i className="bi bi-envelope-at"></i></span>
 
               <div>
                 <h3>Email</h3>
@@ -71,7 +71,7 @@ function Contact() {
               className="contact-icon-link"
               aria-label="Call primary phone number"
             >
-              <span className="contact-icon"><i class="bi bi-telephone-fill"></i></span>
+              <span className="contact-icon"><i className="bi bi-telephone-fill"></i></span>
 
               <div>
                 <h3>Phone</h3>
@@ -84,7 +84,7 @@ function Contact() {
               className="contact-icon-link"
               aria-label="Call alternative phone number"
             >
-              <span className="contact-icon"><i class="bi bi-telephone-fill"></i></span>
+              <span className="contact-icon"><i className="bi bi-telephone-fill"></i></span>
 
               <div>
                 <h3>Alternative</h3>
