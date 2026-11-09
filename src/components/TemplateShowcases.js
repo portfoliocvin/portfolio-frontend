@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { apiRequest, assetUrl } from "../admin/adminApi";
+import "../css/TemplateShowcases.css";
 
 const resumes = [
   ["classic", "Classic Professional", "Clean and ATS-friendly"],
