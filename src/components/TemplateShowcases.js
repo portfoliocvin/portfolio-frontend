@@ -18,7 +18,7 @@ const resumes = [
 
 const PortfolioCard = ({ item, index }) => (
   <article className="platform-showcase-card">
-    <a className="platform-square-preview" href="/customer/register" aria-label={"Build a portfolio with " + item.name}>
+    <a className="platform-square-preview" href={"/template-preview/portfolio/" + item.key} aria-label={"Preview " + item.name + " portfolio template"}>
       {item.previewImageUrl ? <img src={assetUrl(item.previewImageUrl)} alt={item.name + " portfolio preview"} /> :
         <div className={"platform-mini-portfolio mini-portfolio-" + (index % 6)}>
           <div className="mini-portfolio-top"><i /><i /><i /></div>
@@ -28,7 +28,7 @@ const PortfolioCard = ({ item, index }) => (
             <i className="mini-portfolio-line" /><div className="mini-portfolio-blocks"><i /><i /><i /></div>
           </div>
         </div>}
-      <span className="platform-preview-overlay">Preview template <b>↗</b></span>
+      <span className="platform-preview-overlay">Open live preview <b>↗</b></span>
     </a>
     <div className="platform-showcase-card-info"><div><b>{item.name}</b><small>{item.category || "Portfolio design"}</small></div><span>PORTFOLIO</span></div>
   </article>
@@ -36,13 +36,13 @@ const PortfolioCard = ({ item, index }) => (
 
 const ResumeCard = ({ item, index }) => (
   <article className="platform-showcase-card">
-    <a className="platform-square-preview" href="/customer/register" aria-label={"Create a resume with " + item.name}>
+    <a className="platform-square-preview" href={"/template-preview/resume/" + item.key} aria-label={"Preview " + item.name + " resume template"}>
       <div className={"platform-mini-resume mini-resume-" + (index % 6)}>
         <div className="mini-resume-header"><i /><span><b /><small /></span></div>
         <div className="mini-resume-contact" />
         <div className="mini-resume-columns"><div><b /><i /><i /><i /><b /><i /><i /></div><div><b /><i /><i /><b /><i /><i /><i /></div></div>
       </div>
-      <span className="platform-preview-overlay">Use this template <b>↗</b></span>
+      <span className="platform-preview-overlay">Open live preview <b>↗</b></span>
     </a>
     <div className="platform-showcase-card-info"><div><b>{item.name}</b><small>{item.note}</small></div><span>RESUME</span></div>
   </article>
