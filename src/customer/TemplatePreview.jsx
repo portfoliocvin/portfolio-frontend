@@ -1,5 +1,4 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
 import "./TemplatePreview.css";
 
 const portfolioTemplates = {
@@ -44,7 +43,7 @@ function ResumeDemo({item}) {
  </div>;
 }
 export default function TemplatePreview() {
- const {type,key}=useParams();
+ const [, , type, key] = window.location.pathname.split("/");
  const portfolio=type==="portfolio";
  const item=portfolio?portfolioTemplates[key]:resumeTemplates[key];
  if(!item) return <main className="tp-not-found"><h1>Template not found</h1><a href="/">Back to Portfolio.cv</a></main>;
