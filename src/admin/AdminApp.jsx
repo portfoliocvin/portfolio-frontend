@@ -24,6 +24,7 @@ const blankProfile = {
 const sections = [
   ["overview", "Overview"],
   ["projects", "Projects"],
+  ["jobs", "Job listings"],
   ["skills", "Skills"],
   ["certifications", "Certifications"],
   ["profile", "Profile details"],
@@ -48,6 +49,9 @@ function AdminApp() {
   const [section, setSection] = useState("overview");
   const [config, setConfig] = useState(null);
   const [projects, setProjects] = useState([]);
+  const [jobs, setJobs] = useState([]);
+  const blankJob = { id: "", category: "private", jobName: "", role: "", companyName: "", applicationStartDate: "", applicationEndDate: "", applicationUrl: "", isPublished: true };
+  const [jobDraft, setJobDraft] = useState(blankJob);
   const [skills, setSkills] = useState([]);
   const [certifications, setCertifications] = useState([]);
   const [profile, setProfile] = useState(blankProfile);
@@ -72,6 +76,8 @@ function AdminApp() {
     setConfig(c);
     const p = await apiRequest("/api/admin/projects");
     setProjects(p.projects || []);
+    const j = await apiRequest("/api/admin/jobs/");
+    setJobs(j.jobs || []);
     const sk = await apiRequest("/api/admin/skills");
     setSkills(sk.skills || []);
     const cert = await apiRequest("/api/admin/certifications");
@@ -227,6 +233,48 @@ async function logout() {
     setStatus("Signed out.");
   }
 }
+
+
+  async function saveJob(e) {
+    e.preventDefault();
+    setBusy(true);
+    setStatus("");
+    try {
+      const id = jobDraft.id;
+      await apiRequest(id ? `/api/admin/jobs/${id}/` : "/api/admin/jobs/", {
+        method: id ? "PUT" : "POST",
+        body: {
+          category: jobDraft.category,
+          jobName: jobDraft.jobName,
+          role: jobDraft.role,
+          companyName: jobDraft.companyName,
+          applicationStartDate: jobDraft.applicationStartDate,
+          applicationEndDate: jobDraft.applicationEndDate,
+          applicationUrl: jobDraft.applicationUrl,
+          isPublished: jobDraft.isPublished,
+        },
+      });
+      setJobDraft(blankJob);
+      const result = await apiRequest("/api/admin/jobs/");
+      setJobs(result.jobs || []);
+      setStatus(id ? "Job updated." : "Job added.");
+    } catch (error) {
+      setStatus(error.message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function deleteJob(job) {
+    if (!window.confirm(`Delete "${job.jobName}"?`)) return;
+    try {
+      await apiRequest(`/api/admin/jobs/${job.id}/`, { method: "DELETE" });
+      setJobs((items) => items.filter((item) => item.id !== job.id));
+      setStatus("Job deleted.");
+    } catch (error) {
+      setStatus(error.message);
+    }
+  }
 
   function editProject(project) {
     setDraft({
@@ -1366,7 +1414,72 @@ async function upload(kind, file) {
           </div>
         )}
 
-        {section === "changes" && (
+
+        {section === "jobs" && (
+          <>
+            <form className="pa-panel pa-settings-form" onSubmit={saveJob}>
+              <h3>{jobDraft.id ? "Edit job listing" : "Add a job listing"}</h3>
+              <p className="pa-muted">Add private-sector or government opportunities. Published jobs appear on the public homepage until the application end date.</p>
+              <label>Job category
+                <select value={jobDraft.category} onChange={(e) => setJobDraft({ ...jobDraft, category: e.target.value })}>
+                  <option value="private">Private Jobs</option>
+                  <option value="government">Government Jobs</option>
+                </select>
+              </label>
+              <label>Job name
+                <input value={jobDraft.jobName} onChange={(e) => setJobDraft({ ...jobDraft, jobName: e.target.value })} required maxLength={200} />
+              </label>
+              <label>Role
+                <input value={jobDraft.role} onChange={(e) => setJobDraft({ ...jobDraft, role: e.target.value })} required maxLength={200} />
+              </label>
+              <label>{jobDraft.category === "government" ? "Company / Department name" : "Company name"}
+                <input value={jobDraft.companyName} onChange={(e) => setJobDraft({ ...jobDraft, companyName: e.target.value })} required maxLength={200} />
+              </label>
+              <label>Application start date
+                <input type="date" value={jobDraft.applicationStartDate} onChange={(e) => setJobDraft({ ...jobDraft, applicationStartDate: e.target.value })} required />
+              </label>
+              <label>Application end date
+                <input type="date" value={jobDraft.applicationEndDate} onChange={(e) => setJobDraft({ ...jobDraft, applicationEndDate: e.target.value })} required />
+              </label>
+              <label>Application link
+                <input type="url" value={jobDraft.applicationUrl} onChange={(e) => setJobDraft({ ...jobDraft, applicationUrl: e.target.value })} placeholder="https://..." required />
+              </label>
+              <label className="pa-checkbox-label">
+                <input type="checkbox" checked={jobDraft.isPublished} onChange={(e) => setJobDraft({ ...jobDraft, isPublished: e.target.checked })} />
+                Publish on public website
+              </label>
+              <div className="pa-customer-actions">
+                <button disabled={busy}>{busy ? "Saving…" : jobDraft.id ? "Update job" : "Add job"}</button>
+                {jobDraft.id && <button type="button" className="pa-secondary" onClick={() => setJobDraft(blankJob)}>Cancel edit</button>}
+              </div>
+            </form>
+            <div className="pa-panel">
+              <div className="pa-panel-title"><div><h3>Current job listings</h3><p>Private and government opportunities managed here.</p></div>
+                <button type="button" className="pa-secondary" onClick={() => apiRequest("/api/admin/jobs/").then((r) => setJobs(r.jobs || [])).catch((e) => setStatus(e.message))}>Refresh</button>
+              </div>
+              {jobs.length === 0 ? <p className="pa-muted">No jobs have been added yet.</p> : (
+                <div className="pa-project-list">
+                  {jobs.map((job) => (
+                    <article className="pa-project-row" key={job.id}>
+                      <div className="pa-project-copy">
+                        <strong>{job.jobName}</strong>
+                        <span>{job.category === "government" ? "GOVERNMENT" : "PRIVATE"} · {job.isPublished ? "PUBLISHED" : "DRAFT"}</span>
+                        <p>{job.role} · {job.companyName}</p>
+                        <p>Applications: {job.applicationStartDate} to {job.applicationEndDate}</p>
+                        <p><a href={job.applicationUrl} target="_blank" rel="noreferrer">Application link ↗</a></p>
+                        <div className="pa-customer-actions">
+                          <button type="button" className="pa-customer-action pa-customer-action-edit" onClick={() => { setJobDraft({ ...job }); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Edit</button>
+                          <button type="button" className="pa-customer-action pa-customer-action-delete" onClick={() => deleteJob(job)}>Delete</button>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              )}
+            </div>
+          </>
+        )}
+\n        {section === "changes" && (
           <div className="pa-panel">
             <h3>Recent changes</h3>
             <p className="pa-muted">
