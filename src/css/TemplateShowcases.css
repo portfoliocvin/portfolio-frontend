@@ -1,0 +1,89 @@
+.platform-showcase-section {
+  padding: 78px clamp(22px, 8vw, 120px);
+  background: #0a0f1b;
+  border-bottom: 1px solid rgba(177,195,229,.1);
+}
+.platform-showcase-heading {
+  display:flex; align-items:flex-end; justify-content:space-between; gap:24px;
+  max-width:1280px; margin:0 auto 28px;
+}
+.platform-showcase-heading h2 {
+  margin:14px 0 10px; color:#f5f7ff; font:800 clamp(27px,3.4vw,42px)/1.15 Manrope,sans-serif; letter-spacing:-1.5px;
+}
+.platform-showcase-heading h2 span { color:#83b5ff; }
+.platform-showcase-heading p { max-width:650px; margin:0; color:#a5aec2; font-size:13px; line-height:1.7; }
+.platform-carousel-controls { display:flex; flex-shrink:0; gap:9px; }
+.platform-carousel-controls button {
+  width:42px; height:42px; border:1px solid rgba(143,177,231,.3); border-radius:50%;
+  color:#e8f0ff; background:#111b2b; font-size:20px; cursor:pointer; transition:.2s;
+}
+.platform-carousel-controls button:hover { color:#07111e; background:#86deda; border-color:#86deda; }
+.platform-showcase-track {
+  display:flex; gap:17px; max-width:1280px; margin:0 auto; padding:4px 2px 17px;
+  overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:thin; scrollbar-color:#405675 transparent;
+}
+.platform-showcase-card { flex:0 0 clamp(205px,23%,270px); min-width:0; scroll-snap-align:start; }
+.platform-square-preview {
+  position:relative; display:block; width:100%; aspect-ratio:1/1; overflow:hidden;
+  border:1px solid rgba(151,183,233,.2); border-radius:13px; background:#111c2d;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+.platform-square-preview > img { display:block; width:100%; height:100%; object-fit:cover; }
+.platform-mini-portfolio { width:100%; height:100%; padding:11%; background:linear-gradient(145deg,#152b42,#0c1423); }
+.mini-portfolio-top { display:flex; gap:4px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,.12); }
+.mini-portfolio-top i { width:5px; height:5px; border-radius:50%; background:#84dcd9; }
+.mini-portfolio-content { padding:15% 4%; }
+.mini-portfolio-content > span { color:#82e1db; font-size:6px; font-weight:800; letter-spacing:1.5px; }
+.mini-portfolio-content > b { display:block; max-width:190px; margin-top:13px; color:#f4f7ff; font:800 clamp(16px,2vw,24px)/1.15 Manrope,sans-serif; }
+.mini-portfolio-line { display:block; width:30px; height:3px; margin-top:13px; border-radius:3px; background:#83b5ff; }
+.mini-portfolio-blocks { display:flex; gap:7px; margin-top:22px; }
+.mini-portfolio-blocks i { flex:1; height:45px; border:1px solid rgba(153,185,237,.22); border-radius:5px; background:rgba(124,162,220,.13); }
+.mini-portfolio-1 { background:linear-gradient(145deg,#1b2540,#101426); }
+.mini-portfolio-1 .mini-portfolio-content > span { color:#c4a2ff; }
+.mini-portfolio-1 .mini-portfolio-line { background:#c4a2ff; }
+.mini-portfolio-2 { background:linear-gradient(145deg,#123b3b,#101e2c); }
+.mini-portfolio-2 .mini-portfolio-content > span { color:#8ee0b9; }
+.mini-portfolio-2 .mini-portfolio-line { background:#8ee0b9; }
+.mini-portfolio-3 { background:linear-gradient(145deg,#30203d,#111525); }
+.mini-portfolio-3 .mini-portfolio-content > span { color:#f2b5cf; }
+.mini-portfolio-3 .mini-portfolio-line { background:#f2b5cf; }
+.mini-portfolio-4 { background:linear-gradient(145deg,#30354b,#111827); }
+.mini-portfolio-5 { background:linear-gradient(145deg,#24334a,#0b1728); }
+.platform-mini-resume { width:72%; height:88%; margin:6% auto; padding:8%; border-radius:3px; background:#f4f5f7; box-shadow:0 9px 20px rgba(0,0,0,.35); }
+.mini-resume-header { display:flex; align-items:center; gap:9px; padding-bottom:10px; border-bottom:2px solid #d9e0e8; }
+.mini-resume-header > i { width:28px; height:28px; flex-shrink:0; border-radius:50%; background:#9cb5d7; }
+.mini-resume-header span { flex:1; }
+.mini-resume-header b,.mini-resume-header small { display:block; height:5px; border-radius:3px; background:#263b59; }
+.mini-resume-header small { width:65%; height:3px; margin-top:5px; background:#9daabd; }
+.mini-resume-contact { width:80%; height:3px; margin:9px 0; background:#c2cbd7; }
+.mini-resume-columns { display:grid; grid-template-columns:1.15fr .85fr; gap:9px; }
+.mini-resume-columns b { display:block; width:65%; height:5px; margin:8px 0 5px; background:#476b9a; }
+.mini-resume-columns i { display:block; width:100%; height:3px; margin:4px 0; background:#c4ccd6; }
+.mini-resume-1 { border-top:7px solid #263d5c; }
+.mini-resume-2 { border-left:8px solid #5d9e9b; }
+.mini-resume-3 { border-top:7px solid #8b6a9f; }
+.mini-resume-4 { border-left:8px solid #b78b63; }
+.mini-resume-5 { border-top:7px solid #343b4b; }
+.platform-preview-overlay {
+  position:absolute; inset:auto 8px 8px; display:flex; align-items:center; justify-content:space-between;
+  padding:9px 11px; border:1px solid rgba(255,255,255,.18); border-radius:8px;
+  color:#f5f8ff; background:rgba(7,13,23,.82); opacity:0; transform:translateY(5px);
+  transition:.2s; font-size:10px; font-weight:700; backdrop-filter:blur(8px);
+}
+.platform-square-preview:hover .platform-preview-overlay,.platform-square-preview:focus-visible .platform-preview-overlay { opacity:1; transform:translateY(0); }
+.platform-preview-overlay b { color:#8de2df; font-size:15px; }
+.platform-showcase-card-info { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; padding:13px 2px 0; }
+.platform-showcase-card-info b,.platform-showcase-card-info small { display:block; }
+.platform-showcase-card-info b { color:#edf2ff; font-size:12px; }
+.platform-showcase-card-info small { margin-top:5px; color:#8795ac; font-size:10px; }
+.platform-showcase-card-info > span { padding:5px 7px; border:1px solid rgba(121,167,255,.2); border-radius:5px; color:#8db6ff; font-size:7px; font-weight:800; letter-spacing:.8px; }
+.platform-showcase-footer { display:flex; justify-content:space-between; gap:12px; max-width:1280px; margin:12px auto 0; color:#75839b; font-size:10px; }
+.platform-showcase-footer a { color:#8de0dc; font-weight:700; text-decoration:none; }
+@media(max-width:760px) {
+  .platform-showcase-section { padding:58px 20px; }
+  .platform-showcase-heading { align-items:flex-start; }
+  .platform-showcase-heading h2 { font-size:29px; }
+  .platform-showcase-heading p { font-size:12px; }
+  .platform-carousel-controls button { width:36px; height:36px; }
+  .platform-showcase-card { flex-basis:70%; }
+}

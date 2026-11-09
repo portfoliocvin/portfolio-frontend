@@ -1,4 +1,5 @@
 import React from "react";
+import TemplateShowcases from "./TemplateShowcases";
 import "../css/PlatformHome.css";
 
 const PlatformHome = () => {
@@ -78,6 +79,8 @@ const PlatformHome = () => {
           <div><span className="platform-feature-icon">◈</span><span><b>Portfolio Builder</b><small>Your work, presented beautifully</small></span></div>
           <div><span className="platform-feature-icon">⌕</span><span><b>Job Opportunities</b><small>Private and government careers</small></span></div>
         </section>
+
+        <TemplateShowcases />
 
         <section className="platform-section platform-tools-section">
           <div className="platform-section-heading">
