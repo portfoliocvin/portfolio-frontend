@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { apiRequest } from "../admin/adminApi";
 import TemplateShowcases from "./TemplateShowcases";
 import "../css/PlatformHome.css";
 
 const PlatformHome = () => {
+  const [jobs, setJobs] = useState([]);
+  useEffect(() => {
+    apiRequest("/api/jobs/")
+      .then((result) => setJobs(result.jobs || []))
+      .catch(() => setJobs([]));
+  }, []);
+  const renderJobs = (category) => {
+    const items = jobs.filter((job) => job.category === category);
+    if (!items.length) return <div className="platform-job-status"><span /> No current openings. Please check again later.</div>;
+    return <div className="platform-live-job-list">{items.map((job) => (
+      <article className="platform-live-job" key={job.id}>
+        <div><h4>{job.jobName}</h4><p>{job.role} · {job.companyName}</p><small>Applications: {job.applicationStartDate} – {job.applicationEndDate}</small></div>
+        <a href={job.applicationUrl} target="_blank" rel="noreferrer">Apply ↗</a>
+      </article>
+    ))}</div>;
+  };
   return (
     <div className="platform-home">
       <header className="platform-header">
@@ -129,7 +146,7 @@ const PlatformHome = () => {
               <h3>Private Jobs</h3>
               <p>Discover opportunities across technology, engineering, business, operations and more — for freshers and experienced professionals.</p>
               <div className="platform-job-tags"><span>Freshers</span><span>Experienced</span><span>Internships</span></div>
-              <div className="platform-job-status"><span /> Job listings are being prepared</div>
+              {renderJobs("private")}
             </article>
             <article className="platform-job-card government-job-card" id="government-jobs">
               <div className="platform-job-icon">▥</div>
@@ -137,7 +154,7 @@ const PlatformHome = () => {
               <h3>Government Jobs</h3>
               <p>Find a dedicated space for central and state government recruitment, examinations, eligibility and important dates.</p>
               <div className="platform-job-tags"><span>Central</span><span>State</span><span>PSU</span></div>
-              <div className="platform-job-status"><span /> Job listings are being prepared</div>
+              {renderJobs("government")}
             </article>
           </div>
           <p className="platform-jobs-note">We’ll publish job details here once listings are verified. Always confirm eligibility and deadlines on the official recruiting organisation’s website.</p>
