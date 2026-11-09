@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.platform-home {
+  --ph-bg: #080b14;
+  --ph-panel: #101626;
+  --ph-panel-2: #131d30;
+  --ph-text: #f5f7ff;
+  --ph-muted: #a5aec2;
+  --ph-line: rgba(177, 195, 229, .14);
+  --ph-blue: #79a7ff;
+  --ph-cyan: #72e2e4;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--ph-text);
+  background: var(--ph-bg);
+  font-family: 'DM Sans', sans-serif;
+}
+.platform-home * { box-sizing: border-box; }
+.platform-home a { color: inherit; text-decoration: none; }
+.platform-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  min-height: 82px;
+  padding: 0 clamp(22px, 6vw, 92px);
+  border-bottom: 1px solid rgba(177,195,229,.1);
+  background: rgba(8,11,20,.94);
+}
+.platform-brand { display: inline-flex; align-items: center; gap: 10px; color: #f7f9ff; font: 800 21px Manrope,sans-serif; white-space: nowrap; }
+.platform-brand-mark { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px; color: #07101c; background: linear-gradient(135deg,#8be7e5,#81aaff); font-size: 19px; }
+.platform-brand-dot { color: var(--ph-cyan); }
+.platform-nav { display: flex; align-items: center; justify-content: center; gap: clamp(14px,2vw,30px); }
+.platform-nav a,.platform-login { color: #c1c9d9; font-size: 12px; font-weight: 700; transition: color .2s; white-space: nowrap; }
+.platform-nav a:hover,.platform-login:hover { color: var(--ph-cyan); }
+.platform-header-actions { display: flex; align-items: center; gap: 18px; }
+.platform-nav-cta { display: inline-flex; align-items: center; gap: 10px; padding: 11px 15px; border: 1px solid rgba(121,167,255,.45); border-radius: 9px; color: #dce8ff; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.platform-nav-cta:hover { background: rgba(121,167,255,.12); }
+.platform-hero { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; min-height: 630px; padding: 82px clamp(22px,9vw,138px) 76px; isolation: isolate; }
+.platform-hero:before { position: absolute; z-index: -2; inset: 0; content: ''; background: radial-gradient(ellipse at 76% 48%,rgba(50,96,170,.22),transparent 42%),linear-gradient(115deg,#080b14 25%,#0c1425 100%); }
+.platform-hero-glow { position: absolute; z-index: -1; width: 340px; height: 340px; border-radius: 50%; filter: blur(100px); opacity: .18; pointer-events: none; }
+.platform-hero-glow-one { top: 80px; right: 12%; background: #4e8eff; }
+.platform-hero-glow-two { bottom: 0; right: 34%; background: #49c9cf; }
+.platform-hero-content { position: relative; z-index: 2; max-width: 640px; }
+.platform-eyebrow { display: flex; align-items: center; gap: 10px; color: #8ce0e1; font-size: 10px; font-weight: 800; letter-spacing: 2px; }
+.platform-eyebrow > span { width: 7px; height: 7px; border-radius: 50%; background: var(--ph-cyan); box-shadow: 0 0 15px var(--ph-cyan); }
+.platform-hero h1,.platform-section-heading h2,.platform-final-cta h2 { margin: 22px 0 18px; color: #f7f8ff; font: 800 clamp(38px,5vw,66px)/1.12 Manrope,sans-serif; letter-spacing: -2.8px; }
+.platform-hero h1 span,.platform-section-heading h2 span,.platform-final-cta h2 span { color: #83b5ff; }
+.platform-hero-copy { max-width: 550px; color: #aeb9ce; font-size: 16px; line-height: 1.8; }
+.platform-hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+.platform-button { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 48px; padding: 0 20px; border-radius: 9px; font-size: 13px; font-weight: 800; transition: transform .2s,background .2s; }
+.platform-button:hover { transform: translateY(-2px); }
+.platform-button-primary { color: #07111e !important; background: linear-gradient(110deg,#8be4e0,#8bb4ff); box-shadow: 0 10px 30px rgba(100,176,220,.16); }
+.platform-button-ghost { border: 1px solid rgba(177,195,229,.25); color: #e3eaff; background: rgba(255,255,255,.025); }
+.platform-hero-trust { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 48px; color: #8f9bb1; font-size: 11px; }
+.platform-hero-trust b { margin-right: 7px; color: #83b5ff; }
+.platform-hero-art { position: relative; min-height: 420px; }
+.platform-orbit { position: absolute; top: 50%; left: 50%; border: 1px solid rgba(127,177,255,.18); border-radius: 50%; transform: translate(-50%,-50%) rotate(-22deg); }
+.platform-orbit-one { width: 430px; height: 280px; }
+.platform-orbit-two { width: 510px; height: 350px; transform: translate(-50%,-50%) rotate(28deg); }
+.platform-preview-card { position: absolute; border: 1px solid rgba(171,198,241,.25); border-radius: 15px; background: linear-gradient(145deg,rgba(26,39,62,.98),rgba(13,20,34,.98)); box-shadow: 0 30px 80px rgba(0,0,0,.42); }
+.platform-resume-card { top: 42px; left: 8%; width: 230px; min-height: 310px; padding: 19px; transform: rotate(-8deg); }
+.platform-card-topline { display: flex; align-items: center; justify-content: space-between; color: #8495b2; font-size: 8px; letter-spacing: 1px; }
+.platform-mini-logo { display: grid; width: 23px; height: 23px; place-items: center; border-radius: 6px; color: #06121e; background: #83dfdc; font-size: 12px; font-weight: 900; }
+.platform-avatar { display: grid; width: 48px; height: 48px; margin-top: 24px; place-items: center; border: 1px solid rgba(131,181,255,.55); border-radius: 50%; color: #9fc4ff; background: rgba(131,181,255,.12); font: 800 14px Manrope,sans-serif; }
+.platform-skeleton { height: 6px; margin-top: 10px; border-radius: 5px; background: rgba(165,190,230,.25); }
+.platform-skeleton-title { width: 65%; height: 10px; margin-top: 15px; background: #9bbaff; }
+.platform-skeleton-subtitle { width: 48%; margin-top: 7px; }
+.platform-resume-rule { height: 1px; margin: 19px 0 12px; background: rgba(165,190,230,.18); }
+.platform-skeleton-wide { width: 100%; }
+.platform-skeleton-medium { width: 76%; }
+.platform-skeleton-short { width: 53%; }
+.platform-resume-tags { display: flex; gap: 7px; margin-top: 22px; }
+.platform-resume-tags i { width: 42px; height: 16px; border: 1px solid rgba(114,226,228,.4); border-radius: 5px; background: rgba(114,226,228,.1); }
+.platform-portfolio-card { top: 115px; right: 4%; width: 275px; min-height: 265px; overflow: hidden; transform: rotate(7deg); }
+.platform-portfolio-bar { display: flex; gap: 5px; padding: 12px 14px; border-bottom: 1px solid rgba(177,195,229,.12); }
+.platform-portfolio-bar span { width: 6px; height: 6px; border-radius: 50%; background: #7793ba; }
+.platform-portfolio-inner { padding: 24px 22px; }
+.platform-portfolio-label { color: #81dfdd; font-size: 7px; font-weight: 800; letter-spacing: 1.6px; }
+.platform-portfolio-heading { margin-top: 13px; color: #f5f7ff; font: 800 24px/1.18 Manrope,sans-serif; }
+.platform-portfolio-heading em { color: #8db9ff; font-style: normal; }
+.platform-portfolio-line { width: 45px; height: 3px; margin-top: 16px; border-radius: 4px; background: #7ce0dc; }
+.platform-portfolio-projects { display: flex; gap: 8px; margin-top: 25px; }
+.platform-portfolio-projects i { flex: 1; height: 43px; border: 1px solid rgba(147,179,230,.2); border-radius: 5px; background: linear-gradient(145deg,rgba(96,138,202,.24),rgba(62,81,125,.08)); }
+.platform-floating-chip { position: absolute; right: 1%; bottom: 30px; display: flex; align-items: center; gap: 9px; padding: 12px 15px; border: 1px solid rgba(114,226,228,.32); border-radius: 10px; color: #d8f5f3; background: rgba(12,31,43,.94); box-shadow: 0 15px 40px rgba(0,0,0,.3); font-size: 10px; font-weight: 700; }
+.platform-floating-chip span { color: #83e5df; font-size: 17px; }
+.platform-feature-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 25px; padding: 28px clamp(22px,10vw,150px); border-top: 1px solid var(--ph-line); border-bottom: 1px solid var(--ph-line); background: #0d1320; }
+.platform-feature-strip > div { display: flex; align-items: center; justify-content: center; gap: 13px; }
+.platform-feature-icon { display: grid; width: 43px; height: 43px; place-items: center; border: 1px solid rgba(121,167,255,.24); border-radius: 12px; color: #8eb8ff; background: rgba(121,167,255,.08); font-size: 22px; }
+.platform-feature-strip b,.platform-feature-strip small { display: block; }
+.platform-feature-strip b { color: #e9efff; font-size: 12px; }
+.platform-feature-strip small { margin-top: 5px; color: #8794aa; font-size: 10px; }
+.platform-section,.platform-jobs-section { padding: 100px clamp(22px,9vw,138px); }
+.platform-section-heading { max-width: 700px; margin: 0 auto 44px; text-align: center; }
+.platform-section-heading .platform-eyebrow { justify-content: center; }
+.platform-section-heading h2 { margin: 16px 0 13px; font-size: clamp(30px,4vw,46px); letter-spacing: -1.7px; }
+.platform-section-heading h2 span { color: #82deda; }
+.platform-section-heading p { color: var(--ph-muted); font-size: 14px; line-height: 1.8; }
+.platform-tool-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; max-width: 1200px; margin: 0 auto; }
+.platform-tool-card { padding: 30px 27px; border: 1px solid var(--ph-line); border-radius: 15px; background: linear-gradient(145deg,#111a2a,#0d1421); }
+.platform-tool-card-featured { border-color: rgba(114,226,228,.38); background: linear-gradient(145deg,rgba(23,50,61,.65),#101827 70%); }
+.platform-tool-icon { display: grid; width: 48px; height: 48px; margin-bottom: 24px; place-items: center; border-radius: 13px; font-size: 23px; }
+.resume-icon { color: #9cbdff; background: rgba(121,167,255,.13); }
+.portfolio-icon { color: #80e4dc; background: rgba(114,226,228,.12); }
+.preview-icon { color: #d3adff; background: rgba(190,145,255,.12); }
+.platform-card-kicker,.platform-job-label { color: #8292ae; font-size: 9px; font-weight: 800; letter-spacing: 1.6px; }
+.platform-tool-card h3,.platform-job-card h3 { margin: 10px 0; color: #f3f6ff; font: 800 23px Manrope,sans-serif; }
+.platform-tool-card p,.platform-job-card p { min-height: 74px; color: #a4afc4; font-size: 12px; line-height: 1.8; }
+.platform-tool-card ul { display: grid; gap: 10px; margin: 22px 0 25px; padding: 0; list-style: none; color: #c5cee0; font-size: 11px; }
+.platform-tool-card li:before { margin-right: 9px; color: #7ce0dc; content: '✓'; }
+.platform-tool-card > a { display: inline-flex; gap: 12px; color: #8bdedc; font-size: 12px; font-weight: 800; }
+.platform-jobs-section { background: #0d1320; }
+.platform-jobs-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
+.platform-job-card { padding: 31px; border: 1px solid var(--ph-line); border-radius: 16px; background: #111a2a; }
+.private-job-card { background: radial-gradient(circle at 100% 0,rgba(72,127,204,.16),transparent 45%),#111a2a; }
+.government-job-card { background: radial-gradient(circle at 100% 0,rgba(70,180,151,.14),transparent 45%),#111a2a; }
+.platform-job-icon { display: grid; width: 48px; height: 48px; margin-bottom: 22px; place-items: center; border-radius: 12px; color: #9fc2ff; background: rgba(121,167,255,.12); font-size: 23px; }
+.government-job-card .platform-job-icon { color: #88e1c4; background: rgba(90,208,165,.12); }
+.platform-job-card h3 { margin-top: 8px; font-size: 27px; }
+.platform-job-card p { min-height: 70px; max-width: 430px; }
+.platform-job-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 24px; }
+.platform-job-tags span { padding: 6px 10px; border: 1px solid rgba(177,195,229,.17); border-radius: 20px; color: #c1cce0; font-size: 10px; }
+.platform-job-status { display: flex; align-items: center; gap: 9px; padding-top: 16px; border-top: 1px solid var(--ph-line); color: #aab6ca; font-size: 11px; }
+.platform-job-status span { width: 7px; height: 7px; border-radius: 50%; background: #e8c77c; box-shadow: 0 0 12px rgba(232,199,124,.4); }
+.platform-jobs-note { max-width: 900px; margin: 24px auto 0; color: #7f8ca3; font-size: 10px; line-height: 1.7; text-align: center; }
+.platform-final-cta { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 25px; max-width: 1100px; margin: 90px auto; padding: 52px clamp(25px,6vw,70px); overflow: hidden; border: 1px solid rgba(121,167,255,.25); border-radius: 20px; background: radial-gradient(circle at 85% 50%,rgba(95,143,226,.2),transparent 35%),linear-gradient(110deg,#121d31,#101a29); }
+.platform-final-cta-content { position: relative; z-index: 1; }
+.platform-final-cta h2 { margin: 15px 0; font-size: clamp(34px,4vw,49px); }
+.platform-final-cta p { max-width: 490px; margin-bottom: 24px; color: #aab6ca; font-size: 13px; line-height: 1.8; }
+.platform-final-cta-mark { position: absolute; right: 9%; color: rgba(133,181,255,.1); font: 800 220px Manrope,sans-serif; letter-spacing: -18px; }
+.platform-final-cta-mark span { color: rgba(114,226,228,.14); }
+.platform-footer { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 20px; padding: 30px clamp(22px,7vw,100px); border-top: 1px solid var(--ph-line); background: #070a12; }
+.platform-footer p { color: #8f9bb0; font-size: 11px; }
+.platform-footer > div { display: flex; justify-content: flex-end; gap: 18px; }
+.platform-footer > div a { color: #b9c5d9; font-size: 11px; }
+.platform-footer small { grid-column: 1/-1; padding-top: 17px; border-top: 1px solid rgba(177,195,229,.1); color: #657188; font-size: 10px; text-align: center; }
+
+@media (max-width: 1050px) {
+  .platform-header { flex-wrap: wrap; padding-top: 15px; padding-bottom: 15px; }
+  .platform-nav { order: 3; width: 100%; justify-content: flex-start; overflow-x: auto; padding: 4px 0; }
+  .platform-hero { grid-template-columns: 1fr .8fr; padding-right: 5vw; padding-left: 5vw; }
+  .platform-hero-art { transform: scale(.85); transform-origin: center; }
+}
+@media (max-width: 760px) {
+  .platform-header { gap: 12px; min-height: 70px; }
+  .platform-brand { font-size: 18px; }
+  .platform-header-actions { gap: 10px; }
+  .platform-nav-cta { padding: 9px 10px; font-size: 10px; }
+  .platform-login { font-size: 11px; }
+  .platform-nav { gap: 20px; }
+  .platform-nav a { font-size: 11px; }
+  .platform-hero { display: block; min-height: 0; padding-top: 70px; padding-bottom: 45px; }
+  .platform-hero h1 { font-size: clamp(39px,10vw,55px); letter-spacing: -2px; }
+  .platform-hero-copy { font-size: 14px; }
+  .platform-hero-trust { gap: 12px; margin-top: 30px; }
+  .platform-hero-art { min-height: 360px; margin-top: 20px; transform: scale(.85); transform-origin: top center; }
+  .platform-feature-strip { grid-template-columns: 1fr; gap: 20px; padding: 25px; }
+  .platform-feature-strip > div { justify-content: flex-start; }
+  .platform-section,.platform-jobs-section { padding: 70px 22px; }
+  .platform-tool-grid,.platform-jobs-grid { grid-template-columns: 1fr; }
+  .platform-tool-card p,.platform-job-card p { min-height: 0; }
+  .platform-final-cta { margin: 50px 18px; padding: 36px 25px; }
+  .platform-final-cta-mark { right: -2%; font-size: 145px; }
+  .platform-footer { grid-template-columns: 1fr 1fr; }
+  .platform-footer p { grid-column: 1/-1; grid-row: 2; }
+  .platform-footer > div { grid-column: 1/-1; justify-content: flex-start; }
+}
+@media (max-width: 420px) {
+  .platform-header-actions { gap: 8px; }
+  .platform-nav-cta { max-width: 145px; white-space: normal; }
+  .platform-hero-art { margin-left: -18px; margin-right: -18px; transform: scale(.72); min-height: 310px; }
+  .platform-hero-actions { align-items: stretch; flex-direction: column; }
+  .platform-button { width: 100%; }
+  .platform-hero-trust { flex-direction: column; }
+}
