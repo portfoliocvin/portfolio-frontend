@@ -175,3 +175,15 @@
   .platform-button { width: 100%; }
   .platform-hero-trust { flex-direction: column; }
 }
+
+
+.platform-live-job-list { display: grid; gap: 10px; margin-top: 22px; }
+.platform-live-job { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 15px 16px; border: 1px solid rgba(145,174,220,.2); border-radius: 13px; background: rgba(8,16,31,.55); }
+.platform-live-job h4 { margin: 0 0 5px; color: #f4f7ff; font-size: 15px; }
+.platform-live-job p { min-height: 0 !important; margin: 0 0 5px; color: #c0cbe0; font-size: 12px; }
+.platform-live-job small { color: #8797b3; font-size: 11px; }
+.platform-live-job > a { flex: 0 0 auto; padding: 9px 12px; border-radius: 8px; color: #07111f; background: #83dfe0; font-size: 11px; font-weight: 800; }
+.platform-jobs-note { margin: 22px 0 0; color: #8797b3; font-size: 11px; line-height: 1.7; }
+@media (max-width: 520px) {
+  .platform-live-job { align-items: flex-start; flex-direction: column; }
+}
