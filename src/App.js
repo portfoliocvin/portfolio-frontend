@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+import PlatformHome from "./components/PlatformHome";
 import "./App.css";
 import CustomerDashboard from "./customer/Dashboard";
 import CustomerLogin from "./customer/Login";
@@ -92,6 +93,15 @@ if (pathname.startsWith("/portfolio/")) {
 if (admin) {
   return <AdminApp />;
 }
+
+if (pathname === "/") {
+  return <PlatformHome />;
+}
+
+if (pathname !== "/portfolio-preview") {
+  return <PlatformHome />;
+}
+
   return (
     <div className="App">
       <Navbar />
