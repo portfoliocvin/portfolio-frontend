@@ -32,8 +32,8 @@ function PortfolioDemo({item}) {
  </main>;
 }
 function ResumeDemo({item}) {
- const [name,person,role,accent]=item;
- return <div className={"tp-resume-paper tp-resume-"+item[0]} style={{"--tp-resume-accent":accent}}>
+ const [key,name,person,role,accent]=item;
+ return <div className={"tp-resume-paper tp-resume-"+key} style={{"--tp-resume-accent":accent}}>
   <header><h1>{person}</h1><h2>{role}</h2><p>Hyderabad, India　·　hello@example.com　·　+91 98765 43210</p></header>
   <section><h3>PROFESSIONAL SUMMARY</h3><p>Motivated professional with a strong foundation in problem-solving, collaboration and delivering practical outcomes. Passionate about continuous learning and creating meaningful work.</p></section>
   <section><h3>EDUCATION</h3><b>Bachelor's Degree — ABC Institute of Technology</b><p>2020 – 2024　·　CGPA: 8.4 / 10</p><b>Intermediate — City Junior College</b><p>2018 – 2020　·　Percentage: 87%</p></section>
