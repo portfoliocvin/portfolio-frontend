@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import PlatformHome from "./components/PlatformHome";
+import TemplatePreview from "./customer/TemplatePreview";
 import "./App.css";
 import CustomerDashboard from "./customer/Dashboard";
 import CustomerLogin from "./customer/Login";
@@ -83,6 +84,10 @@ if (pathname === "/customer/editor") {
 }
 if (pathname === "/customer/resume") {
   return <ResumeBuilder />;
+}
+
+if (pathname.startsWith("/template-preview/")) {
+  return <TemplatePreview />;
 }
 
 if (pathname.startsWith("/portfolio/")) {
