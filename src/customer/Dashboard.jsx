@@ -508,7 +508,7 @@ export default function Dashboard() {
       console.error("Logout request failed:", err);
     }
 
-    window.location.replace("/customer/login");
+    window.location.replace("/");
   }
 
   if (loading) {
